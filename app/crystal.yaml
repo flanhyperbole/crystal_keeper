@@ -1,0 +1,4 @@
+homeCrystal: #the local ubuntu secrets manager
+  name: 'HomeCrystal'
+  auth: None
+  

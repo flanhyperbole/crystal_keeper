@@ -1,0 +1,19 @@
+# defines the structural information that must be contained in a shard
+# allows consitency across interfaces, and should be held in order
+shard:
+  structure: #key:value pairs in the lookup mechanisim of the crystal.
+    requred:
+      label: 'human readable name'
+      uniqueId: 'lable_snakecase_by_default'
+      scope: 
+        - local
+        - remote
+      type:
+        - config # general info that we want to sync, but isn't as sensitive
+        - environment # infrormation that we'd like to include in an environment for general use 
+        - secret # passwords, usernames, keys etc
+        - unknowable # extra layer of security here, probably cannot be accessed without a pw prompt similar, not for general secret -> app use
+    optional:
+      related: 'name of an app or service you want to relate for ease  of grouping'
+      collection: 'antoher name for ease of grouping'
+
